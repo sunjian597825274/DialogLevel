@@ -33,10 +33,6 @@ public class DLArrayList extends ArrayList<DialogLevelModel> {
 
     }
 
-    @Override
-    public boolean add(DialogLevelModel dialogLevelModel) {
-        return super.add(dialogLevelModel);
-    }
     public boolean sortAdd(DialogLevelModel inModel){
         Log.e("DLArrayList","add---"+inModel.level);
         int lastSize = size();
