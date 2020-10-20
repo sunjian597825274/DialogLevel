@@ -17,20 +17,7 @@ public class SimpleDialogLevelController implements DismissListenerBinder.OnDLDi
     public SimpleDialogLevelController(Activity activity) {
         this.activity = new WeakReference<>(activity);
     }
-    public void safeShow(final int level, final Dialog dialog,final DialogInterface.OnDismissListener onDismissListener){
-        safeShow(level, 0, dialog, onDismissListener);
-    }
     public void safeShow(final int level,long delayMillis, final Dialog dialog,final DialogInterface.OnDismissListener onDismissListener){
-//        if (Looper.myLooper() != Looper.getMainLooper()) {
-//            new Handler(Looper.getMainLooper()).post(new Runnable() {
-//                @Override
-//                public void run() {
-//                    show(level,dialog,onDismissListener);
-//                }
-//            });
-//        }else{
-//            show(level,dialog,onDismissListener);
-//        }
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
