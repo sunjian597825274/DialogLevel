@@ -51,12 +51,6 @@ public class MainActivity extends Activity implements DialogInterface.OnDismissL
                     }
                     dialogLevelManager.show(level2,dialog2,MainActivity.this);
                 }
-//                new Handler().postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        showCommonDialog("content delay",55);
-//                    }
-//                },3000);
                 break;
         }
     }
