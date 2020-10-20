@@ -9,6 +9,8 @@
 
 2.延时显示dialog
 
+3.处理OnDismissListener覆盖问题
+
 二 调用方式
 
 1.每个activity中调用,再需要的activity中添加
