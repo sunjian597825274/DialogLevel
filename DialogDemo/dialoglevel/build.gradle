@@ -22,6 +22,26 @@ android {
     }
 
 }
+apply plugin: 'maven'
+ext {
+    // 从Github上clone下来的项目的本地地址
+    GITHUB_REPO_PATH = "/Users/sunjian/gitclone/DialogLevel"       //这里指定的就是刚刚新建项目后clone下来的在本地的路径
+    PUBLISH_GROUP_ID = 'com.sunjay'
+    PUBLISH_ARTIFACT_ID = 'dialoglevel'
+    PUBLISH_VERSION = '0.1'
+}
+uploadArchives {
+    repositories.mavenDeployer {
+        def deployPath = file(project.GITHUB_REPO_PATH)
+        repository(url: "file://${deployPath.absolutePath}")
+        pom.project {
+            groupId project.PUBLISH_GROUP_ID
+            artifactId project.PUBLISH_ARTIFACT_ID
+            version project.PUBLISH_VERSION
+        }
+    }
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
